@@ -88,7 +88,7 @@ void print(List_2c& list) {
 		Node_2c* it = list.head;
 		while (it != NULL) { //обход списка при помощи указателя
 			cout << it->data << " "; //вывод элемента
-			it = it->next; //шаг к след элементу
+			it = it->next; //к след элементу
 		}
 		cout << endl;
 	}
@@ -101,7 +101,7 @@ void reverse_print(List_2c& list) {
 		Node_2c* it = list.tail;
 		while (it != NULL) {
 			cout << it->data << " "; //вывод элемента
-			it = it->prev; //шаг к предыдущему элементу
+			it = it->prev; //к предыдущему элементу
 		}
 		cout << endl;
 	}
