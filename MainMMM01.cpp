@@ -1,15 +1,17 @@
 #include <iostream>
 #include <cmath>
 
+
 using namespace std;
 
-void transfer(int T) {
+/*void transfer(int T) {
 	double t = T - 273;
-	cout << "Temper: t" << endl;
-}
+	cout << "Temperature in K: t" << endl;
+}*/
 
-void func(double w) {
+void func(int w) {
 	int q = 0;
+	int i = 0;
 
 	const double R = 8.31;
 	const double M = 0.029;
@@ -20,23 +22,30 @@ void func(double w) {
 	double h = 25;
 
 
-	while (q <= h) {
+	while (q < h) {
 		q = q + w;
-		double p = p0*exp((-M*g*h) / (R*T));
-		double po = (p*M) / (T*R);
-		double  t = t - 6;
+		double p = p0 * exp((-M * g * h) / (R * T)); 
+		double po = (p * M) / (T * R);
 
-		cout << "Air temperature" << t << endl;
+		t = t - 6;
+		
+		i = i + 1; //counter for index
+		 
+		cout << "[" << i << "]" <<" -------------" << endl; //index
+		cout << "Air temperature = " << t << endl;
 		cout << "Pressure = " << p << endl;
-		cout << "Air density" << po << endl;
+		cout << "Air density = " << po << endl;
+		cout << "-------------------" << endl;
+		cout << endl;
 	}
 }
 
 int main() {
 	int w;
-	
-	cin >> "Enter step by km: " >> w ;
-	cout << endl;
+
+	cout << "Enter step by km: ";
+	cin >> w;
+	cout << "Result:" <<  endl;
 	func(w);
 
 
